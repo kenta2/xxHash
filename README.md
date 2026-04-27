@@ -97,7 +97,7 @@ such functions have performance so poor as to be impractical.
 
 [birthday paradox]: https://en.wikipedia.org/wiki/Birthday_problem
 [newer forks of SMHasher]: https://github.com/rurban/smhasher
-[provably secure hash functions]: https://en.wikipedia.org/wiki/Security_of_cryptographic_hash_functions#Provably_secure_hash_functions
+[provably secure hash functions]: https://en.wikipedia.org/w/index.php?title=Security_of_cryptographic_hash_functions&oldid=1333236020#Provably_secure_hash_functions
 
 ### Build modifiers
 
