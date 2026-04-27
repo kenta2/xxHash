@@ -89,7 +89,7 @@ A more detailed analysis is documented [in the wiki](https://github.com/Cyan4973
 
 xxHash is a *non-cryptographic* hash algorithm,
 meaning that its dispersion and randomness properties are good in the absence of an adversary deliberately concocting inputs to cause bad dispersion or bad randomness properties.
-It *is* possible for an adversary to concoct such bad inputs and induce bad behavior in xxHash.
+It *is* possible for a hypothetical adversary to concoct such bad inputs and induce bad behavior in xxHash.
 The Benchmarks table above chooses 7 to be the highest possible quality for non-cryptographic hashes;
 higher values are reserved for cryptographic algorithms which are designed for it to be computational infeasible for an adversary to concoct bad inputs and induce bad behavior.
 The highest quality value 10 is reserved for [provably secure hash functions] for which it has been proven that inducing bad behavior is as difficult as some hard mathematical problem;
