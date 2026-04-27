@@ -28,23 +28,23 @@ The [open source benchmark program] is compiled with `clang` v10.0 using `-O3` f
 
 | Hash Name     | Width | Bandwidth (GB/s) | Small Data Velocity | Quality | Comment |
 | ---------     | ----- | ---------------- | ----- | --- | --- |
-| __XXH3__ (SSE2) |  64 | 31.5 GB/s        | 133.1 | 10
-| __XXH128__ (SSE2) | 128 | 29.6 GB/s      | 118.1 | 10
-| _RAM sequential read_ | N/A | 28.0 GB/s  |   N/A | N/A | _for reference_
-| City64        |    64 | 22.0 GB/s        |  76.6 | 10
-| T1ha2         |    64 | 22.0 GB/s        |  99.0 |  9 | Slightly worse [collisions]
-| City128       |   128 | 21.7 GB/s        |  57.7 | 10
-| __XXH64__     |    64 | 19.4 GB/s        |  71.0 | 10
-| SpookyHash    |    64 | 19.3 GB/s        |  53.2 | 10
-| Mum           |    64 | 18.0 GB/s        |  67.0 |  9 | Slightly worse [collisions]
-| __XXH32__     |    32 |  9.7 GB/s        |  71.9 | 10
-| City32        |    32 |  9.1 GB/s        |  66.0 | 10
-| Murmur3       |    32 |  3.9 GB/s        |  56.1 | 10
-| SipHash       |    64 |  3.0 GB/s        |  43.2 | 10
-| FNV64         |    64 |  1.2 GB/s        |  62.7 |  5 | Poor avalanche properties
-| Blake2        |   256 |  1.1 GB/s        |   5.1 | 10 | Cryptographic
-| SHA1          |   160 |  0.8 GB/s        |   5.6 | 10 | Cryptographic but broken
-| MD5           |   128 |  0.6 GB/s        |   7.8 | 10 | Cryptographic but broken
+| __XXH3__ (SSE2) |  64 | 31.5 GB/s        | 133.1 | 7
+| __XXH128__ (SSE2) | 128 | 29.6 GB/s      | 118.1 | 7
+| _RAM sequential read_ | N/A | 28.0 GB/s  |   N/A | 0 | _for reference_
+| City64        |    64 | 22.0 GB/s        |  76.6 | 7
+| T1ha2         |    64 | 22.0 GB/s        |  99.0 |  6 | Slightly worse [collisions]
+| City128       |   128 | 21.7 GB/s        |  57.7 | 7
+| __XXH64__     |    64 | 19.4 GB/s        |  71.0 | 7
+| SpookyHash    |    64 | 19.3 GB/s        |  53.2 | 7
+| Mum           |    64 | 18.0 GB/s        |  67.0 | 6  | Slightly worse [collisions]
+| __XXH32__     |    32 |  9.7 GB/s        |  71.9 | 7
+| City32        |    32 |  9.1 GB/s        |  66.0 | 7
+| Murmur3       |    32 |  3.9 GB/s        |  56.1 | 7
+| SipHash       |    64 |  3.0 GB/s        |  43.2 | 7
+| FNV64         |    64 |  1.2 GB/s        |  62.7 |  4 | Poor avalanche properties
+| Blake2        |   256 |  1.1 GB/s        |   5.1 | 9 | Cryptographic
+| SHA1          |   160 |  0.8 GB/s        |   5.6 | 8 | Cryptographic but broken
+| MD5           |   128 |  0.6 GB/s        |   7.8 | 8 | Cryptographic but broken
 
 [open source benchmark program]: https://github.com/Cyan4973/xxHash/tree/release/tests/bench
 [collisions]: https://github.com/Cyan4973/xxHash/wiki/Collision-ratio-comparison#collision-study
@@ -87,9 +87,17 @@ able to generate and compare billions of hashes to test the limits of 64-bit has
 On this front too, xxHash features good results, in line with the [birthday paradox].
 A more detailed analysis is documented [in the wiki](https://github.com/Cyan4973/xxHash/wiki/Collision-ratio-comparison).
 
+xxHash is a *non-cryptographic* hash algorithm,
+meaning that its dispersion and randomness properties are good in the absence of an adversary deliberately concocting inputs to cause bad dispersion or bad randomness properties.
+It *is* possible for an adversary to concoct such bad inputs and induce bad behavior in xxHash.
+The Benchmarks table above chooses 7 to be the highest possible quality for non-cryptographic hashes;
+higher values are reserved for cryptographic algorithms which are designed for it to be computational infeasible for an adversary to concoct bad inputs and induce bad behavior.
+The highest quality value 10 is reserved for [provably secure hash functions] for which it has been proven that inducing bad behavior is as difficult as some hard mathematical problem;
+such functions have performance so poor as to be impractical.
+
 [birthday paradox]: https://en.wikipedia.org/wiki/Birthday_problem
 [newer forks of SMHasher]: https://github.com/rurban/smhasher
-
+[provably secure hash functions]: https://en.wikipedia.org/wiki/Security_of_cryptographic_hash_functions#Provably_secure_hash_functions
 
 ### Build modifiers
 
