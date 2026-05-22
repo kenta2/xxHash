@@ -96,6 +96,9 @@ use a cryptographic hash algorithm for such a scenario.
 
 The Benchmarks table above chooses 7 to be the highest possible quality for non-cryptographic hashes.
 Qualities 7 and above indicate that the hash algorithm passes all the statistical tests described above.
+Statistical tests are not adversarial:
+they test a wide variety of random inputs,
+not inputs narrowly designed to induce bad hash behavior.
 Cryptographic hash algorithms are assigned qualities above 7
 because they are designed for it to be computational infeasible for an adversary to concoct bad inputs and induce bad hash behavior.
 As the table indicates, the higher quality of cryptographic hash algorithms comes at considerable performance cost.
