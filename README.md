@@ -89,16 +89,19 @@ A more detailed analysis is documented [in the wiki](https://github.com/Cyan4973
 
 xxHash is a *non-cryptographic* hash algorithm,
 meaning that its statistical dispersion and randomness properties are good
-in the absence of an adversary deliberately concocting inputs to cause bad dispersion or bad randomness properties.
-It *is* possible for a hypothetical adversary to concoct such bad inputs and induce bad behavior in xxHash.
-The Benchmarks table above chooses 7 to be the highest possible quality for non-cryptographic hashes,
-passing all the statistical tests above.
-Cryptographic algorithms are assigned qualities above 7
-because they are designed to be computational infeasible for an adversary to concoct bad inputs and induce bad hash behavior.
-The highest quality value 10 is reserved for [provably secure hash functions]
-for which it has been proven that inducing bad hash behavior is as difficult as some hard mathematical problem;
-such functions have performance so poor as to be impractical
-so have not been benchmarked.
+if there is no adversary deliberately concocting inputs to cause bad dispersion or bad randomness properties.
+It *is* possible for a hypothetical adversary to concoct bad inputs to induce bad behavior in xxHash.
+xxHash should not be used when there is an adversary:
+use a cryptographic hash algorithm for such a scenario.
+The Benchmarks table above chooses 7 to be the highest possible quality for non-cryptographic hashes.
+Quality 7 indicates the non-cryptographic hash passes all the statistical tests described above.
+Cryptographic hash algorithms are assigned qualities above 7
+because they are designed for it to be computational infeasible for an adversary to concoct bad inputs and induce bad hash behavior.
+As the table indicates, the higher quality of cryptographic hash algorithms comes at considerable performance cost.
+The highest quality value 10 has been left unassigned and reserved for [provably secure hash functions]
+for which it has been proven that inducing bad hash behavior is as difficult as some hard mathematical problem.
+All known provably secure hash functions have performance so poor as to be impractical,
+so none have been benchmarked.
 
 [birthday paradox]: https://en.wikipedia.org/wiki/Birthday_problem
 [newer forks of SMHasher]: https://github.com/rurban/smhasher
