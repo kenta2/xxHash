@@ -93,6 +93,7 @@ if there is no adversary deliberately concocting inputs to cause bad dispersion 
 It *is* possible for a hypothetical adversary to concoct bad inputs to induce bad behavior in xxHash.
 xxHash should not be used when there is an adversary:
 use a cryptographic hash algorithm for such a scenario.
+
 The Benchmarks table above chooses 7 to be the highest possible quality for non-cryptographic hashes.
 Quality 7 indicates the non-cryptographic hash passes all the statistical tests described above.
 Cryptographic hash algorithms are assigned qualities above 7
