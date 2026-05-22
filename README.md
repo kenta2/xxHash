@@ -89,7 +89,7 @@ A more detailed analysis is documented [in the wiki](https://github.com/Cyan4973
 
 xxHash is a *non-cryptographic* hash algorithm,
 meaning that its statistical dispersion and randomness properties are good
-if there is no adversary deliberately concocting inputs to cause bad dispersion or bad randomness properties.
+if there is no evil adversary deliberately concocting inputs to cause bad dispersion or bad randomness properties.
 It *is* possible for a hypothetical adversary to concoct bad inputs to induce bad behavior in xxHash.
 xxHash should not be used when there is an adversary:
 use a non-broken cryptographic hash algorithm in such a scenario.
