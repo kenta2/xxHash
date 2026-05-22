@@ -100,7 +100,8 @@ Statistical tests are not adversarial:
 they test a wide variety of random inputs,
 not inputs narrowly designed to induce bad hash behavior.
 Cryptographic hash algorithms are assigned qualities above 7
-because they are designed for it to be computational infeasible for an adversary to concoct bad inputs and induce bad hash behavior.
+because they are designed for it to be computational infeasible for an adversary
+to concoct inputs that induce bad hash behavior.
 As the table indicates, the higher quality of cryptographic hash algorithms comes at considerable performance cost.
 The highest quality value 10 has been left unassigned and reserved for [provably secure hash functions]
 for which it has been proven that inducing bad hash behavior is as difficult as some hard mathematical problem.
