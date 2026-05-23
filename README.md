@@ -89,15 +89,20 @@ A more detailed analysis is documented [in the wiki](https://github.com/Cyan4973
 
 xxHash is a *non-cryptographic* hash algorithm,
 meaning that its statistical dispersion and randomness properties are good
-if there is no adversary deliberately concocting evil inputs to cause bad dispersion or bad randomness properties.
-It *is* possible for a hypothetical adversary to concoct bad inputs to induce bad behavior in xxHash.
-xxHash should not be used when there is an adversary:
-use a non-broken cryptographic hash algorithm in such a scenario.
+if there is no adversary
+deliberately concocting evil inputs
+to cause bad dispersion or bad randomness properties.
+It *is* possible for a hypothetical adversary
+to concoct bad inputs to induce bad behavior in xxHash.
+xxHash should not be used
+when there is an adversary:
+use a non-broken cryptographic hash algorithm in such scenarios.
 
 The Benchmarks table above chooses 7 to be the highest possible quality for non-cryptographic hashes.
-Qualities 7 and above indicate that the hash algorithm passes all the statistical tests described above.
+Qualities 7 and above indicate
+that the hash algorithm passes all statistical tests described above.
 Statistical tests are not adversarial:
-they test a wide variety of random inputs,
+they test a wide variety of random and typical inputs,
 not inputs narrowly designed to induce bad hash behavior.
 Cryptographic hash algorithms are assigned qualities above 7
 because they are designed for it to be computational infeasible for an adversary
