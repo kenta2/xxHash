@@ -93,10 +93,10 @@ if there is no adversary
 deliberately concocting evil inputs
 to cause bad dispersion or bad randomness properties.
 It *is* possible for a hypothetical adversary
-to concoct bad inputs to induce bad behavior in xxHash.
+to concoct inputs to induce bad behavior in xxHash.
 xxHash should not be used
 when there is an adversary:
-use a non-broken cryptographic hash algorithm in such scenarios.
+instead, use a non-broken cryptographic hash algorithm in such scenarios.
 
 The Benchmarks table above chooses 7 to be the highest possible quality for non-cryptographic hashes.
 Qualities 7 and above indicate
@@ -105,14 +105,13 @@ Statistical tests are not adversarial:
 they test a wide variety of random and typical inputs,
 not inputs narrowly designed to induce bad hash behavior.
 Cryptographic hash algorithms are assigned qualities above 7
-because they are designed for it to be
-computationally as difficult as possible for an adversary
+because it is computationally infeasible for an adversary
 to concoct inputs that induce bad hash behavior.
 As the table indicates, the higher quality of cryptographic hash algorithms comes at considerable performance cost.
 The highest quality value 10 has been left unassigned and reserved for [provably secure hash functions]
 for which it has been proven that inducing bad hash behavior is as difficult as some hard mathematical problem.
-All known provably secure hash functions have performance so poor as to be impractical,
-so none have been benchmarked.
+All known provably secure hash functions have performance so bad as to be impractical,
+so none are benchmarked here.
 
 [birthday paradox]: https://en.wikipedia.org/wiki/Birthday_problem
 [newer forks of SMHasher]: https://github.com/rurban/smhasher
